@@ -31884,6 +31884,7 @@ async function run() {
         // Get owner and repo from context
         const owner = github.context.repo.owner;
         const repo = github.context.repo.repo;
+        core.debug(`owner: ${owner}, repo: ${repo}`);
         // Create a comment on PR
         // https://octokit.github.io/rest.js/#octokit-routes-issues-create-comment
         const response = await client.rest.issues.createComment({
