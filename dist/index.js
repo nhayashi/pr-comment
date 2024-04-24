@@ -31877,6 +31877,7 @@ async function run() {
         // Get input parameters.
         const token = core.getInput('repo-token');
         const message = core.getInput('message');
+        core.debug(`token: ${token}`);
         core.debug(`message: ${message}`);
         // Create a GitHub client.
         const client = github.getOctokit(token);
