@@ -57,8 +57,9 @@ jobs:
         id: test-action
         uses: ./
         with:
-          milliseconds: 2000
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          message: PR comment test
 
-      - name: Print Output
+      - name: Print comment URL
         id: output
-        run: echo "${{ steps.test-action.outputs.time }}"
+        run: echo "Comment URL - ${{ steps.test-action.outputs.comment-url }}"

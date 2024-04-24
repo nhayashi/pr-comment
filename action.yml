@@ -1,23 +1,25 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'PR Comment'
+description: 'Post a comment on PR'
+author: 'nhayashi'
 
 # Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
-  icon: 'heart'
-  color: 'red'
+  icon: 'message-square'
+  color: 'green'
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  repo-token:
+    description: 'GITHUB_TOKEN secret'
     required: true
-    default: '1000'
+  message:
+    description: 'Message to comment'
+    required: true
 
 # Define your outputs here.
 outputs:
-  time:
-    description: 'Your output description here'
+  comment-url:
+    description: 'The PR comment URL'
 
 runs:
   using: node20
