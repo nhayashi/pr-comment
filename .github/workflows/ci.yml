@@ -2,14 +2,11 @@ name: Continuous Integration
 
 on:
   pull_request:
-    branches:
-      - main
   push:
     branches:
       - main
 
-permissions:
-  contents: read
+permissions: write-all
 
 jobs:
   test-typescript:

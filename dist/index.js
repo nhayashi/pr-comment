@@ -31877,12 +31877,14 @@ async function run() {
         // Get input parameters.
         const token = core.getInput('repo-token');
         const message = core.getInput('message');
+        core.debug(`token: ${token}`);
         core.debug(`message: ${message}`);
         // Create a GitHub client.
         const client = github.getOctokit(token);
         // Get owner and repo from context
         const owner = github.context.repo.owner;
         const repo = github.context.repo.repo;
+        core.debug(`owner: ${owner}, repo: ${repo}`);
         // Create a comment on PR
         // https://octokit.github.io/rest.js/#octokit-routes-issues-create-comment
         const response = await client.rest.issues.createComment({
